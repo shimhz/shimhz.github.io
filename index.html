@@ -91,9 +91,11 @@ h1{font-size:clamp(34px,4.8vw,58px);font-weight:700;letter-spacing:-.03em;line-h
 h1 span{color:transparent;background:linear-gradient(100deg,var(--accent),var(--grad2));-webkit-background-clip:text;background-clip:text}
 .hero-grid{display:grid;grid-template-columns:1fr auto;gap:clamp(30px,5vw,72px);align-items:center}
 .hero-photo{width:clamp(160px,17vw,215px);padding:3px;border-radius:50%;background:linear-gradient(150deg,var(--edge1),var(--edge2) 55%);justify-self:end}
-.hero-photo img{display:block;width:100%;aspect-ratio:1;object-fit:cover;object-position:50% 30%;border-radius:50%}
+.hero-photo img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 30%;border-radius:50%}
 .hero p{margin-top:18px;font-size:clamp(15px,1.6vw,16.5px);line-height:1.75;color:var(--dim);max-width:640px}
 .hero p b{color:var(--txt);font-weight:500}
+.hero p a{color:var(--accent);text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent);transition:border-color .2s}
+.hero p a:hover{border-color:var(--accent)}
 /* floating stat cards */
 .stats{display:flex;gap:14px;margin-top:44px;flex-wrap:wrap}
 .stat{padding:1px;border-radius:14px;background:linear-gradient(150deg,var(--edge1),var(--edge2) 55%)}
@@ -178,7 +180,7 @@ body.js .r.in{opacity:1;transform:none}
       <div class="hero-txt">
         <div class="sys r">Speech · Audio · Trustworthy AI</div>
         <h1 class="r">Hye-jin <span>Shim</span></h1>
-        <p class="r">I'm a speech and audio AI researcher based in Seattle. I'm currently organizing the <b>WildSpoof Challenge</b>, an ICASSP 2026 Grand Challenge. Previously, I was a postdoctoral researcher at <b>Carnegie Mellon University</b> (LTI) working with Shinji Watanabe, and before that at the <b>University of Eastern Finland</b> with Tomi Kinnunen. I received my Ph.D. in Computer Science and Machine Learning from the <b>University of Seoul</b>, advised by Ha-Jin Yu.</p>
+        <p class="r">I'm a speech and audio AI researcher based in Seattle. I'm currently organizing the <b>WildSpoof Challenge</b>, an ICASSP 2026 Grand Challenge. Previously, I was a postdoctoral researcher at <b>Carnegie Mellon University</b> (LTI) working with <a href="https://sites.google.com/view/shinjiwatanabe">Shinji Watanabe</a>, and before that at the <b>University of Eastern Finland</b> with <a href="https://uefconnect.uef.fi/en/tomi.kinnunen/">Tomi Kinnunen</a>. I received my Ph.D. in Computer Science and Machine Learning from the <b>University of Seoul</b>, advised by <a href="https://pure.uos.ac.kr/en/persons/ha-jin-yu">Ha-Jin Yu</a>.</p>
         <p class="r">My research spans <b>audio deepfake detection</b>, <b>speaker verification</b>, and <b>speech quality assessment</b>, with a particular interest in data bias and evaluation design.</p>
         <p class="r">I'm interested in keeping speech technology <b>worthy of trust</b> — building systems that know when audio is fake, who is really speaking, and how good speech truly sounds, and designing the evaluations that keep them honest.</p>
       </div>
