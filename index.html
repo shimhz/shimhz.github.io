@@ -193,6 +193,7 @@ body.js .r.in{opacity:1;transform:none}
     </div>
     <div class="stats">
       <div class="stat r"><div class="stat-in"><div class="n">60+</div><div class="l">Publications</div></div></div>
+      <div class="stat r"><div class="stat-in"><div class="n" id="citeN">2,859</div><div class="l">Citations</div></div></div>
       <div class="stat r"><div class="stat-in"><div class="n">3</div><div class="l">Challenges organized</div></div></div>
     </div>
   </div>
@@ -268,6 +269,9 @@ const setTheme=n=>{
 let pref='day';try{pref=localStorage.getItem('theme')||'day'}catch(e){}
 setTheme(pref);
 tBtn.addEventListener('click',()=>setTheme(document.documentElement.dataset.theme==='dark'?'day':'night'));
+fetch('files/scholar.json').then(r=>r.json()).then(d=>{
+  if(d&&d.citations)document.getElementById('citeN').textContent=d.citations.toLocaleString('en-US');
+}).catch(()=>{});
 document.body.classList.add('js');
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
 document.querySelectorAll('.r').forEach((el,i)=>{el.style.transitionDelay=(i%4*60)+'ms';io.observe(el)});

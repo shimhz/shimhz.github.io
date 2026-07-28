@@ -1,0 +1,31 @@
+name: Update citation count
+
+on:
+  schedule:
+    - cron: "17 9 * * 1" # every Monday 09:17 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Fetch citation count from Google Scholar
+        run: python scripts/update_citations.py
+      - name: Commit updated count
+        run: |
+          if ! git diff --quiet files/scholar.json; then
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git add files/scholar.json
+            git commit -m "Update citation count"
+            git push
+          else
+            echo "No change to commit."
+          fi
