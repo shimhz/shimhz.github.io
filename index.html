@@ -1,247 +1,246 @@
 <!DOCTYPE html>
-
 <html lang="en">
-
 <head>
-  <title>Hye-jin Shim</title>
-  <meta charset="utf-8">
-  <link rel="icon" type="image/jpg" href="files/icon.jpg">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name=description content="Hye-jin Shim">
-  <link rel="stylesheet" href="files/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-  <link href="https://fonts.googleapis.com/css?family=Rubik:500|Lora|Average|Neuton" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Libre+Franklin:400,700&display=swap" rel="stylesheet">
-</head>
-
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hye-jin Shim — Trustworthy Speech AI</title>
+<meta name="description" content="Hye-jin Shim, Ph.D. — speech and audio AI researcher working on audio deepfake detection, speaker verification, and speech quality assessment. Organizer of ASVspoof 5, SASV, and the WildSpoof Challenge.">
+<link rel="icon" href="files/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --primary-color: #3287a8;
-    --secondary-color: #536390;
-    --font-color: #46433A;
-    --bg-color: #FDFDFD;
-    --heading-color: #292922;
-  }
-
-  [data-theme="dark"] {
-    --primary-color: #28deeb;
-    --secondary-color: #818cab;
-    --font-color: #CCCCCC;
-    --bg-color: #2C2C2C;
-    --heading-color: #818cab;
-  }
-
-  hr {
-    display: block;
-    margin-top: 2.5em;
-    margin-bottom: 0.5em;
-    margin-left: auto;
-    margin-right: auto;
-    border-style: inset;
-    border-width: .5px;
-  }
-
-  body {
-    background-color: var(--bg-color);
-    color: var(--font-color);
-    font-family: "Libre Franklin", sans-serif;
-    font-size: 1.45em;
-    line-height: 1.5;
-  }
-
-  a {
-    color: var(--primary-color);
-  }
-
-  a:hover {
-    color: var(--primary-color);
-  }
-
-  .navbar-inverse {
-    border-radius: 0px;
-
-  }
-
-  .navbar {
-    background: #fdfdfd;
-    color: #fdfdfd;
-  }
-
-  /* style.css */
-  .skip-link {
-    position: absolute;
-    top: -40px;
-    left: 0;
-    background: #000000;
-    color: white;
-    padding: 8px;
-    z-index: 100;
-  }
-
-  .skip-link:focus {
-    top: 0;
-  }
-
-  .news {
-    line-height: 1.7;
-  }
-
-  .myheader {
-    font-family: "Rubik", sans-serif;
-    line-height: 2em;
-    font-size: 20px;
-    border-bottom: 0.5px solid grey;
-  }
+:root{
+  --bg:#08090b;
+  --txt:#f4f4f5;
+  --dim:#a1a1aa;
+  --faint:#52525b;
+  --line:rgba(255,255,255,.08);
+  --glass:rgba(24,24,27,.55);
+  --accent:#7dd3c0;
+  --mono:'JetBrains Mono',monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--txt);font-family:'Inter',system-ui,sans-serif;overflow-x:hidden}
+/* atmosphere */
+.atmo{position:fixed;inset:0;pointer-events:none;z-index:0}
+.atmo::before{content:"";position:absolute;width:60vw;height:60vw;left:-15vw;top:-25vw;border-radius:50%;
+  background:radial-gradient(circle,rgba(125,211,192,.09),transparent 65%);filter:blur(40px)}
+.atmo::after{content:"";position:absolute;width:50vw;height:50vw;right:-18vw;top:22vh;border-radius:50%;
+  background:radial-gradient(circle,rgba(99,102,241,.08),transparent 65%);filter:blur(40px)}
+.rails{position:fixed;inset:0;max-width:1140px;margin:0 auto;pointer-events:none;z-index:0;
+  border-left:1px solid var(--line);border-right:1px solid var(--line)}
+.rails i{position:absolute;width:5px;height:5px;background:var(--faint)}
+.rails .tl{top:84px;left:-3px}.rails .tr{top:84px;right:-3px}
+.rails .bl{bottom:40px;left:-3px}.rails .br{bottom:40px;right:-3px}
+.wrap{position:relative;z-index:1;max-width:1140px;margin:0 auto;padding:0 clamp(20px,4vw,56px)}
+/* nav */
+.nav{position:fixed;top:22px;left:50%;transform:translateX(-50%);z-index:10;
+  padding:1px;border-radius:999px;
+  background:linear-gradient(120deg,rgba(255,255,255,.22),rgba(255,255,255,.04) 40%,rgba(255,255,255,.14));}
+.nav-in{display:flex;align-items:center;gap:4px;background:rgba(9,10,12,.72);backdrop-filter:blur(18px);
+  -webkit-backdrop-filter:blur(18px);border-radius:999px;padding:8px 10px}
+.nav-in b{font-size:13px;font-weight:600;padding:0 12px;letter-spacing:.02em;white-space:nowrap}
+.nav-in b i{color:var(--accent);font-style:normal}
+.nav-in a{font-size:12.5px;color:var(--dim);text-decoration:none;padding:7px 12px;border-radius:999px;transition:.2s}
+.nav-in a:hover{color:var(--txt);background:rgba(255,255,255,.07)}
+.nav-in a.cta{color:#0a0a0a;background:var(--txt);font-weight:600;margin-left:6px}
+.nav-in a.cta:hover{background:var(--accent)}
+.nav-in a.ico{display:flex;align-items:center;padding:7px 8px}
+.nav-in a.ico svg{width:15px;height:15px;fill:currentColor}
+.nav-in .sep{width:1px;height:16px;background:var(--line);margin:0 4px}
+/* hero */
+.hero{min-height:92vh;display:flex;flex-direction:column;justify-content:center;padding-top:110px;position:relative}
+.sys{font-family:var(--mono);font-size:11px;letter-spacing:.22em;color:var(--accent);text-transform:uppercase;margin-bottom:22px;display:flex;align-items:center;gap:10px}
+.sys::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 12px var(--accent);animation:pulse 2.4s infinite}
+@keyframes pulse{50%{opacity:.4}}
+h1{font-size:clamp(38px,6.2vw,74px);font-weight:700;letter-spacing:-.03em;line-height:1.04;max-width:820px}
+h1 span{color:transparent;background:linear-gradient(100deg,var(--accent),#818cf8);-webkit-background-clip:text;background-clip:text}
+.hero p{margin-top:26px;font-size:clamp(15px,1.6vw,17.5px);line-height:1.7;color:var(--dim);max-width:600px}
+.hero p b{color:var(--txt);font-weight:500}
+/* floating stat cards */
+.stats{display:flex;gap:14px;margin-top:44px;flex-wrap:wrap}
+.stat{padding:1px;border-radius:14px;background:linear-gradient(150deg,rgba(255,255,255,.18),rgba(255,255,255,.03) 55%)}
+.stat-in{background:var(--glass);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  border-radius:13px;padding:16px 20px;min-width:150px}
+.stat-in .n{font-size:24px;font-weight:700;letter-spacing:-.02em}
+.stat-in .l{font-family:var(--mono);font-size:10px;color:var(--dim);letter-spacing:.14em;text-transform:uppercase;margin-top:5px}
+/* sections */
+section{padding:clamp(56px,8vw,100px) 0;border-top:1px solid var(--line)}
+.label{font-family:var(--mono);font-size:11px;color:var(--faint);letter-spacing:.22em;text-transform:uppercase;margin-bottom:14px}
+h2{font-size:clamp(24px,3vw,34px);font-weight:700;letter-spacing:-.02em;margin-bottom:38px}
+/* experience glass rows */
+.xrow{padding:1px;border-radius:16px;background:linear-gradient(150deg,rgba(255,255,255,.14),rgba(255,255,255,.02) 55%);margin-bottom:14px;transition:transform .25s}
+.xrow:hover{transform:translateY(-2px)}
+.xrow-in{display:grid;grid-template-columns:150px 1fr;gap:20px;background:var(--glass);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-radius:15px;padding:22px 26px}
+.xrow .t{font-family:var(--mono);font-size:11.5px;color:var(--accent);padding-top:3px;letter-spacing:.05em}
+.xrow h3{font-size:16.5px;font-weight:600}
+.xrow .org{color:var(--dim);font-weight:400}
+.xrow p{font-size:14px;color:var(--dim);line-height:1.65;margin-top:7px}
+/* blog */
+.cats{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:28px}
+.cats button{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--dim);background:transparent;border:1px solid var(--line);border-radius:999px;padding:8px 16px;cursor:pointer;transition:.2s}
+.cats button:hover{color:var(--txt);border-color:rgba(255,255,255,.25)}
+.cats button.on{color:#0a0a0a;background:var(--accent);border-color:var(--accent)}
+.posts{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.post{padding:1px;border-radius:16px;background:linear-gradient(150deg,rgba(255,255,255,.14),rgba(255,255,255,.02) 55%);transition:transform .25s;text-decoration:none;color:var(--txt)}
+.post:hover{transform:translateY(-2px)}
+.post.hide{display:none}
+.post-in{background:var(--glass);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-radius:15px;padding:22px 24px;height:100%;display:flex;flex-direction:column}
+.post .top{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}
+.post .c{font-family:var(--mono);font-size:10px;letter-spacing:.14em;color:var(--accent);text-transform:uppercase;border:1px solid rgba(125,211,192,.3);border-radius:999px;padding:3px 10px}
+.post .d{font-family:var(--mono);font-size:10.5px;color:var(--faint)}
+.post h3{font-size:16px;font-weight:600;line-height:1.5;flex:1}
+.post p{font-size:13.5px;color:var(--dim);line-height:1.65;margin-top:10px}
+.post .read{font-family:var(--mono);font-size:11px;color:var(--dim);margin-top:16px;letter-spacing:.08em}
+.post:hover .read{color:var(--accent)}
+/* contact */
+.contact{text-align:center;padding-bottom:120px}
+.contact h2{margin-bottom:16px}
+.contact p{color:var(--dim);max-width:480px;margin:0 auto 34px;line-height:1.7;font-size:15.5px}
+.btn{display:inline-block;background:var(--txt);color:#0a0a0a;font-weight:600;font-size:14.5px;padding:13px 30px;border-radius:999px;text-decoration:none;transition:.2s}
+.btn:hover{background:var(--accent)}
+.socials{margin-top:28px;display:flex;justify-content:center;gap:26px;font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase}
+.socials a{color:var(--faint);text-decoration:none}
+.socials a:hover{color:var(--accent)}
+footer{border-top:1px solid var(--line);padding:26px 0 40px;font-family:var(--mono);font-size:11px;color:var(--faint);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+/* reveal */
+.r{transition:opacity .7s cubic-bezier(.22,.61,.36,1),transform .7s cubic-bezier(.22,.61,.36,1)}
+body.js .r{opacity:0;transform:translateY(18px)}
+body.js .r.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.r{opacity:1;transform:none;transition:none}}
+@media (max-width:760px){
+  .posts{grid-template-columns:1fr}
+  .xrow-in{grid-template-columns:1fr;gap:6px}
+  .nav-in a:not(.cta):not(.ico){display:none}
+  .nav-in .sep{display:none}
+}
 </style>
-
+</head>
 <body>
-  <a class="skip-link" href="#main">Skip to main</a>
-  <!-- Navigation -->
-  <nav class="navbar">
-    <div class="container">
+<div class="atmo"></div>
+<div class="rails"><i class="tl"></i><i class="tr"></i><i class="bl"></i><i class="br"></i></div>
+
+<div class="nav"><div class="nav-in">
+  <b>Hye-jin <i>Shim</i></b>
+  <a href="#experience">Experience</a>
+  <a href="#blog">Blog</a>
+  <a href="#contact">Contact</a>
+  <span class="sep"></span>
+  <a class="ico" href="https://scholar.google.com/citations?user=MSIvlNoAAAAJ&hl=en" aria-label="Google Scholar" title="Google Scholar"><svg viewBox="0 0 24 24"><path d="M12 2 1 8.5l4.1 2.4v4.9c0 .6.3 1.1.8 1.5 1.5 1.1 3.7 1.7 6.1 1.7s4.6-.6 6.1-1.7c.5-.4.8-.9.8-1.5v-4.9l2.1-1.2v5.8h2V8.5L12 2zm5.9 13.6c-1.1.8-2.9 1.4-4.9 1.4s-3.8-.6-4.9-1.4v-3.5l4.9 2.9 4.9-2.9v3.5z"/></svg></a>
+  <a class="ico" href="https://github.com/shimhz" aria-label="GitHub" title="GitHub"><svg viewBox="0 0 24 24"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.55 0-.27-.01-1.17-.02-2.12-3.2.7-3.88-1.36-3.88-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.03 1.76 2.69 1.25 3.35.96.1-.75.4-1.25.72-1.54-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.28 1.18-3.09-.12-.29-.51-1.46.11-3.05 0 0 .96-.31 3.15 1.18a10.9 10.9 0 0 1 2.87-.39c.97 0 1.95.13 2.87.39 2.19-1.49 3.15-1.18 3.15-1.18.62 1.59.23 2.76.11 3.05.73.81 1.18 1.83 1.18 3.09 0 4.41-2.69 5.38-5.25 5.67.41.35.77 1.05.77 2.12 0 1.53-.01 2.76-.01 3.14 0 .3.2.66.8.55A11.52 11.52 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5z"/></svg></a>
+  <a class="ico" href="https://www.linkedin.com/in/hye-jin-shim-95273b108/" aria-label="LinkedIn" title="LinkedIn"><svg viewBox="0 0 24 24"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13zM7.12 20.45H3.55V9h3.57v11.45z"/></svg></a>
+  <a class="cta" href="#">CV ↗</a>
+</div></div>
+
+<div class="wrap">
+
+  <div class="hero">
+    <div class="sys r">Speech · Audio · Trustworthy AI</div>
+    <h1 class="r">Keeping speech technology <span>worthy of trust.</span></h1>
+    <p class="r">I'm a speech and audio AI researcher working on <b>audio deepfake detection</b>, <b>speaker verification</b>, and <b>speech quality assessment</b> — formerly a postdoc at <b>Carnegie Mellon</b> with Shinji Watanabe and at the <b>University of Eastern Finland</b> with Tomi Kinnunen.</p>
+    <div class="stats">
+      <div class="stat r"><div class="stat-in"><div class="n">60+</div><div class="l">Publications</div></div></div>
+      <div class="stat r"><div class="stat-in"><div class="n">3</div><div class="l">Challenges organized</div></div></div>
+      <div class="stat r"><div class="stat-in"><div class="n">NeurIPS</div><div class="l">2025 Spotlight</div></div></div>
+      <div class="stat r"><div class="stat-in"><div class="n">9</div><div class="l">Mentees</div></div></div>
     </div>
-  </nav>
+  </div>
 
-  <!-- Page Content -->
-  <div class="container">
-    <div class="row">
-      <!-- Entries Column -->
-      <div class="col-md-3">
-        <!-- Contact Info on the Sidebar and image -->
-        <div style="font-family: Rubik, sans-serif; font-size: 30px;"><b>Hye-jin Shim</b></div><br>
-        <img class="img-responsive" src="files/hyejin.jpg" height="150" width="200" alt=""
-          style="border-radius: 2%;"><br>
-        <p>
-          <b>Current:</b> Postdoctoral Researcher, Carnegie Mellon University<br>
-          <b>E-mail:</b> shimhz6.6@gmail.com<br>
-        </p>
-        <p>
-          <a href="https://www.linkedin.com/in/hye-jin-shim-95273b108/" rel="noopener" rel="noopener"
-            target="_blank">LinkedIn</a> |
-          <a href="https://scholar.google.co.kr/citations?user=MSIvlNoAAAAJ&hl=en&authuser=1" rel="noopener"
-            rel="noopener" target="_blank">Google Scholar</a> |
-          <a href="https://github.com/shimhz" rel="noopener" target="_blank">GitHub</a> |
-          <a href="files/pdfs/" rel="noopener" target="_blank">CV</a>
-        </p>
+  <section id="experience">
+    <div class="label r">01 / Trajectory</div>
+    <h2 class="r">Experience</h2>
+    <div class="xrow r"><div class="xrow-in">
+      <div class="t">2025 — NOW</div>
+      <div><h3>Independent Researcher <span class="org">· Seattle</span></h3>
+      <p>Organizing the WildSpoof Challenge — an ICASSP 2026 Grand Challenge advancing in-the-wild TTS and spoofing-aware speaker verification.</p></div>
+    </div></div>
+    <div class="xrow r"><div class="xrow-in">
+      <div class="t">2024 — 2025</div>
+      <div><h3>Postdoctoral Researcher <span class="org">· Carnegie Mellon University, LTI</span></h3>
+      <p>Led speech quality assessment for channel profiling; co-organized ASVspoof 5 and designed its primary evaluation metric; mentored audio large-model, language-ID, and spoof-diarization research.</p></div>
+    </div></div>
+    <div class="xrow r"><div class="xrow-in">
+      <div class="t">2022 — 2023</div>
+      <div><h3>Postdoctoral Researcher <span class="org">· University of Eastern Finland</span></h3>
+      <p>Led SPEECHFAKES, a national project on data bias in audio deepfake detection; exposed shortcut learning in anti-spoofing classifiers.</p></div>
+    </div></div>
+    <div class="xrow r"><div class="xrow-in">
+      <div class="t">— 2022</div>
+      <div><h3>Ph.D., Computer Science &amp; ML <span class="org">· University of Seoul</span></h3>
+      <p>Graph attention networks for an integrated speaker-verification and anti-spoofing system.</p></div>
+    </div></div>
+  </section>
 
-      </div>
+  <section id="blog">
+    <div class="label r">02 / Writing</div>
+    <h2 class="r">Blog</h2>
+    <div class="cats r">
+      <button class="on" data-cat="all">All</button>
+      <button data-cat="research">Research</button>
+      <button data-cat="study">Study Notes</button>
+      <button data-cat="community">Community</button>
+      <button data-cat="career">Career</button>
+    </div>
+    <div class="posts">
+      <a class="post r" href="#" data-cat="research"><div class="post-in">
+        <div class="top"><span class="c">Research</span><span class="d">JUL 2026</span></div>
+        <h3>Can LLMs judge audio? Early findings from auditing speech quality judges</h3>
+        <p>What happens when you stress-test audio-LLM judges the way we stress-tested anti-spoofing systems — and why the failure modes look familiar.</p>
+        <div class="read">COMING SOON</div>
+      </div></a>
+      <a class="post r" href="#" data-cat="study"><div class="post-in">
+        <div class="top"><span class="c">Study Notes</span><span class="d">JUN 2026</span></div>
+        <h3>A 21-day sprint through modern ASR, TTS, and LLMs</h3>
+        <p>Notes and notebooks from a hands-on refresher: what changed since Kaldi, what actually matters in 2026, and what I'd skip.</p>
+        <div class="read">COMING SOON</div>
+      </div></a>
+      <a class="post r" href="#" data-cat="community"><div class="post-in">
+        <div class="top"><span class="c">Community</span><span class="d">MAR 2026</span></div>
+        <h3>How to organize a speech challenge without losing your mind</h3>
+        <p>Lessons from ASVspoof 5, SASV, and WildSpoof: timelines, baselines, metrics, and the emails nobody warns you about.</p>
+        <div class="read">COMING SOON</div>
+      </div></a>
+      <a class="post r" href="#" data-cat="research"><div class="post-in">
+        <div class="top"><span class="c">Research</span><span class="d">DEC 2025</span></div>
+        <h3>What ASVspoof 5 taught me about evaluation metrics</h3>
+        <p>Why we designed a-DCF the way we did, and what a metric silently decides about the systems people end up building.</p>
+        <div class="read">COMING SOON</div>
+      </div></a>
+      <a class="post r" href="#" data-cat="career"><div class="post-in">
+        <div class="top"><span class="c">Career</span><span class="d">SEP 2025</span></div>
+        <h3>Leaving the lab: field notes from a research sabbatical</h3>
+        <p>On stepping off the academic conveyor belt, running an ICASSP grand challenge independently, and choosing what comes next.</p>
+        <div class="read">COMING SOON</div>
+      </div></a>
+    </div>
+  </section>
 
-      <!-- main info -->
-      <div class="col-md-9" id="main">
+  <section class="contact" id="contact">
+    <div class="label r">03 / Signal</div>
+    <h2 class="r">Let's talk.</h2>
+    <p class="r">Open to research and industry roles in speech, audio, and trustworthy AI — and always happy to discuss benchmarks, deepfakes, and evaluation.</p>
+    <a class="btn r" href="mailto:shimhz6.6@gmail.com">shimhz6.6@gmail.com</a>
+    <div class="socials r"><a href="https://scholar.google.com/citations?user=MSIvlNoAAAAJ&hl=en">Scholar</a><a href="https://github.com/shimhz">GitHub</a><a href="https://www.linkedin.com/in/hye-jin-shim-95273b108/">LinkedIn</a></div>
+  </section>
 
-        <div style="text-align:left;">
-          <!--Title-->
-          <!--<div style="font-family: Rubik, sans-serif; font-size: 22px;">-->
-          <div class="myheader">
-            <b>Bio</b>
-          </div>
-          <br>
-          <!--Content-->
-          <div class="news">&#9670;&nbsp;&nbsp;Current: Postdoctoral researcher, LTI
-            @Carnegie Mellon University (Pittsburgh, USA) - PI: Shinji Watanabe</div>
-          <div class="news">&#9670;&nbsp;&nbsp;Postdoctoral researcher, School of Computing @University of Eastern
-            Finland (Joensuu, Finland) - PI: Tomi Kinnunen</div>
-          <div class="news">&#9670;&nbsp;&nbsp;PhD, School of Computer Science @University of Seoul (Seoul, Korea) -
-            Supervisor: Ha-Jin Yu</div>
-          <div class="news">&#9670;&nbsp;&nbsp;MS, School of Computer Science @University of Seoul (Seoul, Korea) -
-            Supervisor: Ha-Jin Yu</div>
-          <div class="news">&#9670;&nbsp;&nbsp;BCom, the Department of International Trade @Kwangwoon University (Seoul,
-            Korea)</div>
-        </div>
+  <footer>
+    <span>© 2026 Hye-jin Shim</span>
+    <span>SEATTLE · 47.6°N 122.3°W</span>
+  </footer>
 
-        <div style="margin-top: 3vh; text-align:left;">
-          <!--Title-->
-          <div class="myheader">
-            <b>Updates</b>
-          </div>
-          <br>
-          <!--Content-->
-          <div class="news">&#9670;&nbsp;&nbsp;I’m currently exploring opportunities for faculty positions in academia as well as research scientist roles. Please feel free to reach out if you know of any openings or would like to connect!
-          </div>
-        </div>
-
-        <div style="margin-top:3vh; text-align:left;">
-          <!--Title-->
-          <div class="myheader">
-            <b>Selected Publications - Latest 1st authored papers</b>
-          </div>
-          <br>
-          <!--Content-->
-          <p>
-            <a href="https://arxiv.org/abs/2403.01355" style="text-decoration: underline; color:#46433A ;">a-DCF: an
-              architecture agnostic metric with application to spoofing-robust speaker verifications</a>
-            <br>
-            <a href="https://github.com/shimhz/a_DCF">[code]</a>
-            <span style="color:#3287a8; float:right;">Odyssey, 2024</span><br>
-            <span style="color:#71797E">Hye-jin Shim, Jee-weon Jung, Tomi Kinnunen, Nicholas Evans, Jean-Francois
-              Bonastre, and Itshak Lapidot</span><br>
-            <span style="color:#9e0b26">Used as a primary evaluation metrics in <a
-                href="https://www.asvspoof.org/">ASVspoof5 challenge</a></span>
-          </p>
-          <p>
-            <a href="https://arxiv.org/abs/2306.00044" style="text-decoration: underline; color:#46433A ;">How to
-              Construct Perfect and Worse-than-Coin-Flip Spoofing Countermeasures: A Word of Warning on Shortcut
-              Learning</a>
-            <span style="color:#3287a8; float:right;">Interspeech, 2023</span><br>
-            <span style="color:#71797E">Hye-jin Shim, Jee-weon Jung, and Tomi Kinnunen</span>
-          </p>
-          <p>
-            <a href="https://arxiv.org/abs/2305.19953" style="text-decoration: underline; color:#46433A ;">Multi-Dataset
-              Co-Training with Sharpness-Aware Optimization for Audio Anti-spoofing</a>
-            <span style="color: #3287a8; float:right;">Interspeech, 2023</span><br>
-            <span style="color:#71797E">Hye-jin Shim, Rosa González Hautamäki, Md Sahidullah, and Tomi
-              Kinnunen</span><br>
-          </p>
-          <p>
-            <a href="https://arxiv.org/abs/2112.12343" style="text-decoration: underline; color:#46433A ;">Graph
-              attentive feature aggregation for text-independent speaker verification</a>
-            <span style="color: #3287a8; float:right;">ICASSP, 2022</span><br>
-            <span style="color:#71797E">Hye-jin Shim*, Jungwoo Heo*, Jae-Han Park, Ga-Hui Lee, and Ha-Jin Yu</span><br>
-          </p>
-        </div>
-
-        <div style="margin-top:3vh; text-align:left;">
-          <!--Title-->
-          <div class="myheader">
-            <b>Community Engagements</b>
-          </div>
-          <br>
-          <div class="news" style="text-align:left;">
-            Conference Review: <span style="color:#71797E">Interspeech, ICASSP, Odyssey, ASRU, SLT</span>
-          </div>
-          <div class="news" style="text-align:left;">
-            Journal Review: <span style="color:#71797E">Computer Speech & Language(CSL), Transactions on Audio, Speech,
-              and Language Processing (TASLP), Speech Communications, Digital Signal Processing, Pattern Recognition
-              Letters, Applied Acoustics</span>
-          </div>
-          <div class="news" style="text-align:left;">
-            Challenge Organizer: <span style="color:#71797E">ASVspoof5 Challenge, Spoofing‑Aware Speaker Verification
-              Challenge</span>
-          </div>
-          <div class="news" style="text-align:left;">
-            Session Chair: <span style="color:#71797E">Spoofing‑Aware Speaker Verification(Special Session),
-              Interspeech</span>
-          </div>
-        </div>
-
-        <br>
-        <br>
-
-        <!-- Other people may like it too! -->
-        <div>
-          <p style="font-size:0.8em; float:right; color:#b5bec9;">
-            &#169; Copyright 2024 Hye-jin Shim.
-            Powered by <u> <a style="color:#b5bec9" target="_blank" rel="noopener"
-                href="https://jekyllrb.com">Jekyll</a></u> with <u><a style="color:#b5bec9" rel="noopener"
-                target="_blank" rel="noopener" href="https://github.com/pages-themes/minimal">minimal</a></u> theme.
-            Last updated in July 2024. Icon: <a
-              href="https://kr.freepik.com/free-vector/keopiga-yesul-guseong_9462908.htm#fromView=search&page=1&position=1&uuid=4d7a728b-c4ae-4bc4-a6e4-1ba9fd26277f">작가
-              macrovector 출처 Freepik</a>
-          </p>
-        </div>
-        <!-- /.container -->
-
+</div>
+<script>
+document.body.classList.add('js');
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.r').forEach((el,i)=>{el.style.transitionDelay=(i%4*60)+'ms';io.observe(el)});
+setTimeout(()=>document.querySelectorAll('.r:not(.in)').forEach(el=>el.classList.add('in')),1800);
+document.querySelectorAll('.cats button').forEach(b=>b.addEventListener('click',()=>{
+  document.querySelectorAll('.cats button').forEach(x=>x.classList.remove('on'));
+  b.classList.add('on');
+  const c=b.dataset.cat;
+  document.querySelectorAll('.post').forEach(p=>p.classList.toggle('hide',c!=='all'&&p.dataset.cat!==c));
+}));
+</script>
 </body>
-
 </html>
